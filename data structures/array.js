@@ -103,23 +103,143 @@ for (let i = 0; i < 3; i++) {
 }
 
 
-// Before we round up with arrays, as you might hav figured out lot of crazy stuffs can be solved with arrays
+// Before we round up with arrays, as you might have figured out lot of crazy stuffs can be solved with arrays
 // Below are some array methods
 
 // [concat] Joins multiple arrays and returns a copy of the joined arrays.
-//   [every] Iterates every element of the array, verifying the desired condition(function) until false is returned.
+const zero = 0;
+const positiveNumbers = [1, 2, 3];
+const negativeNumbers = [-3, -2, -1];
+let numbers = negativeNumbers.concat(zero, positiveNumbers);
+console.log(numbers)//=>[-3,-2,-1,0,1,2,3]
+
+
+// [every] Iterates every element of the array, verifying the desired condition(function) until false is returned.
+function multipleOf3(x) {
+  if (x == 0)
+  {
+    console.log(x)
+    return false;
+  }
+  else if (x % 3 == 0) {
+    console.log(x)
+    return true;
+  } else {
+    console.log(x)
+    return false;
+  }
+}
+
+let number = [1, 2, 3, 4, 5]
+number.every(multipleOf3)//=> 1, false; stop immediately cause the first element is false
+
+
 //   [filter] Creates an array with each element that evaluates to true in the function provided.
+function filterMultipleOf3(x) {
+  if (x == 0) {
+    return false;
+  }
+  else if (x % 3 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+let number = [1, 2, 3, 4, 5,6]
+let threes = number.filter(filterMultipleOf3)
+console.log(threes)//=>[3,6]
+
+
 // [forEach] Executes a specific function on each element of the array.
+function multipleOf3ish(x) {
+  if (x == 0) {
+    console.log(x, false)
+    return false;
+  }
+  else if (x % 3 == 0) {
+    console.log(x, true)
+    return true;
+  } else {
+    console.log(x, false)
+    return false;
+  }
+}
+let number = [1, 2, 3, 4, 5]
+number.forEach(multipleOf3ish)//1 false,  2 false,  3 true, 4 false, 5 false
+
+
 // [join] Joins all the array elements into a string.
+let number = [1, 2, 3, 4, 5]
+console.log(number.join())//=>1,2,3,4,5
+console.log(number.join('-'))//=>1-2-3-4-5
+
+
 //   [indexOf] Searches the array for specific elements and returns its position.
+let names = ['john', 'joseph', 'peter', 'andrew']
+names.indexOf('joseph')//=> 1; because joseph is the second element in the ZERO indexed javascript array
+
+
 // [lastIndexOf] Returns the position of the last item in the array that matches the search criterion.
+let names = ['john', 'joseph', 'peter', 'andrew', 'joseph']
+names.lastIndexOf('joseph')//=> 4; the last occurence of joseph is on the fourth position
+
+
 //   [map] Creates a new array from a function that contains the criterion / condition and returns the elements of the array that match the criterion.
+function mapMultipleOf3(x) {
+  if (x == 0) {
+    return false;
+  }
+  else if (x % 3 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+let number = [1, 2, 3, 4, 5]
+number.map(mapMultipleOf3)//=>[false, false, true, false, false]
+
+
 //   [reverse] Reverses the array so that the last item becomes the first and vice versa.
+let number = [1, 2, 3, 4, 5]
+number.reverse()//=>[5, 4, 3, 2, 1] 
+
+
 // [slice] Returns a new array from the specified index.
-//  [some] Iterates every element of the array, verifying the desired condition(function) until true is returned.
+//  [some] Iterates every element of the array, verifying the desired condition(function) until true is returned.(just the opposite of every)
+function multipleOf3(x) {
+  if (x == 0) {
+    console.log(x)
+    return false;
+  }
+  else if (x % 3 == 0) {
+    console.log(x)
+    return true;
+  } else {
+    console.log(x)
+    return false;
+  }
+}
+
+let number = [1, 2, 3, 4, 5]
+number.some(multipleOf3)//=> 1,2,3 false; stops when the third element returns true;
+
+
 // [sort] Sorts the array alphabetically or by the supplied function.
+let names = ['john', 'John', 'joseph', 'Joseph', 'peter','Peter', 'andrew','Andrew']
+names.sort()//=>["Andrew", "John", "Joseph", "Peter", "andrew", "john", "joseph", "peter"]..... the capital letter come before the small, this is due to the way Capital and small letters are arranged in the ASCII format
+//so always ensure to use .toLowerCase for string when working on sort algorithms
+
+
 // [toString] Returns the array as a string.
+let number = [1, 2, 3, 4, 5]
+number.toString()//=>'1,2,3,4,5'
+
+
 // [valueOf] Similar to the toString method, returns the array as a string.
+let number = [1, 2, 3, 4, 5]
+number.valueOf()//=>[1,2,3,4,5]
 
 
 
