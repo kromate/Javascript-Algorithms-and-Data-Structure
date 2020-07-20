@@ -12,7 +12,7 @@ class Stack { //created a stack class to represent our stack data-structure
   }
 }
 
-// the following method would be used to simulate the functionality of the stack
+// the following method would be used to simulate the functionalities of the stack
 
 // push(element(s)): This method adds a new element(or several elements) to the top of the stack.
 push(element){
