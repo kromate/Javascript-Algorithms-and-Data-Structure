@@ -1,2 +1,2 @@
 # Javascript-Algorithms-and-Data-Structure
-An introduction to Algorithms in Javascript
+An introduction to Data-Structures & Algorithms in Javascript
