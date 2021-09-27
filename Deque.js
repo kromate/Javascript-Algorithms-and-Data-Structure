@@ -10,7 +10,6 @@ class Deque(){
     this.items = {};
   }
 }
-
 // below are all the methods the class would have
 
 // addFront(element): This method adds a new element at the front of the deque
